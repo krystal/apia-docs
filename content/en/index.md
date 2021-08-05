@@ -5,6 +5,8 @@ position: 1.0
 category: "Welcome"
 ---
 
+![Screenshot](/welcome.png)
+
 Apia is an opinionated framework for building HTTP APIs into a Ruby application. By following a strict approach to crafting your endpoints, Apia is able to generate a consistent schema describing every aspect of the API and thus can generate detailed and easy to use documentation for end users.
 
 ## Why should I use Apia?
@@ -19,3 +21,13 @@ Apia is an opinionated framework for building HTTP APIs into a Ruby application.
 - [Apia Docs Generator](https://github.com/krystal/apia-docs-generator) - a utility for converting a Apia schema JSON file into beautiful interactive documentation.
 - [Apia Schema Parser](https://github.com/krystal/apia-schema-parser) - a utility to parse an Apia schema in Ruby
 - [Apia Insomnia](https://github.com/krystal/apia-insomnia) - an extension to generate schema files compatible with Insomnia.
+
+## What do the docs look like?
+
+Lovely!
+
+![Screenshot](/screenshots/light-docs.png)
+
+There's even a dark mode!
+
+![Screenshot](/screenshots/dark-docs.png)
