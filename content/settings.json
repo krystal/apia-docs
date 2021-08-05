@@ -1,0 +1,10 @@
+{
+  "title": "Apia Documentation",
+  "url": "https://github.com/krystal/apia",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "krystal/apia-docs",
+  "defaultDir": ""
+}
