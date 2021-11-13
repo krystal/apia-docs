@@ -54,7 +54,7 @@ An endpoint is an action that can be invoked by your consumers. It might return 
 
 ```ruby
 module CoreAPI
-  module Endpints
+  module Endpoints
     class ProductListEndpoint < Apia::Endpoint
 
       name 'List products'
