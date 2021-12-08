@@ -11,14 +11,14 @@ To begin, you just need to install the gem into the application.
 gem 'apia', '~> 3.0'
 ```
 
-Once installed, you need to decide where to store your API (or APIs). If you are working with a Rails application, it is recommended to put your API into an `app/apis` directory. Within this, you can create a directory for each API you wish to create (or you can put each API in different locations). For this example, we'll create an API called `CoreAPI` which will live in `app/apis/core_api`.
+Once installed, you need to decide where to store your API (or APIs). If you are working with a Rails application, it is recommended to put your API into an `app/apis` directory. Within this, you can create a directory for each API you wish to create (or you can put each API in different locations). For this example, we'll create an API called `CoreApi` which will live in `app/apis/core_api`.
 
 ### Creating your API
 
 To begin, you need to create a class which is the top-level of your API. This should be a class that inherits from `Apia::API`. This is the main entry point to your application. All configuration for your API will start here.
 
 ```ruby
-module CoreAPI
+module CoreApi
   class Base < Apia::API
 
     name 'Core API'
@@ -40,21 +40,21 @@ module MyApp
 
     # ... other configuration for your application will also be in this file.
 
-    config.middleware.use Apia::Rack, 'CoreAPI::Base', '/api/core/v1', development: Rails.env.development?
+    config.middleware.use Apia::Rack, 'CoreApi::Base', '/api/core/v1', development: Rails.env.development?
 
   end
 end
 ```
 
-The key thing to note here is that the `CoreAPI::Base` reference is provided as a string rather than the constant itself. You can provide the constant here but using a string will ensure that API can be reloaded in development when classes are unloaded.
+The key thing to note here is that the `CoreApi::Base` reference is provided as a string rather than the constant itself. You can provide the constant here but using a string will ensure that API can be reloaded in development when classes are unloaded.
 
 ### Creating an endpoint
 
 An endpoint is an action that can be invoked by your consumers. It might return a list, create an resource or anything that takes your fancy. Begin by creating a new `endpoints` director in your `app/apis/core_api` directory. We'll begin by making an endpoint that will simply return a list of products that we sell. Make a file called `product_list_endpoint.rb` in your new `endpoints` directory.
 
 ```ruby
-module CoreAPI
-  module Endpints
+module CoreApi
+  module Endpoints
     class ProductListEndpoint < Apia::Endpoint
 
       name 'List products'
@@ -98,10 +98,10 @@ The following scalars are built-in:
 
 ### Routing
 
-Once you have added your controller, you need to add it to your API. Open up `app/apis/core_api/base` and add a route for it.
+Once you have added your controller, you need to add it to your API. Open up `app/apis/core_api/base.rb` and add a route for it.
 
 ```ruby
-module CoreAPI
+module CoreApi
   class Base < Apia::API
 
     routes do
@@ -114,14 +114,14 @@ end
 
 ### Testing
 
-We can now test that works by making a GET request to `products`.
+We can now test that works by making a GET request to `/api/core/v1/products`.
 
 ### Returning objects
 
 In the product example above, we returned an array of strings. In reality, we'll need to be able to return objects containing multiple properties. To do this, you need to create a `Apia::Object` class which defines the fields available on each object. This is an example object for our ficticious product class.
 
 ```ruby
-module CoreAPI
+module CoreApi
   module Objects
     class Product < Apia::Object
 
