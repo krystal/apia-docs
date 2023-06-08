@@ -32,7 +32,7 @@ At the most basic, you will define a name and description for your API. We'll be
 
 ### Routing requests to your API
 
-Apia provides a Rack middleware that will handle all requests for your API and pass any non-matching request through the stack to your application. You can define this in your `config.rb` or, if you're using a Rails application, it can go into `config/application.rb`.
+Apia provides a Rack middleware that will handle all requests for your API and pass any non-matching request through the stack to your application. You can define this in your `config.ru` or, if you're using a Rails application, it can go into `config/application.rb`.
 
 ```ruby
 module MyApp
