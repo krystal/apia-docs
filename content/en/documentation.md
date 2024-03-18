@@ -23,7 +23,7 @@ docker run \
     -v $(pwd)/schema.json:/config/schema.json \
     -v $(pwd)/config.yaml:/config/config.yaml \
     -v path/to/output:/output \
-    ghcr.io/krystal/apia-docs-generator:latest
+    ghcr.io/apiaframework/docs-generator:latest
 ```
 
 ## Documentation configuration

@@ -6,7 +6,7 @@
 
 ## The purpose of this repository
 
-This repository hosts the documentation for Apia only. If you are looking for the Github repo for the library source code, [go to the open source repository for Apia →](https://github.com/krystal/apia)
+This repository hosts the documentation for Apia only. If you are looking for the Github repo for the library source code, [go to the open source repository for Apia →](https://github.com/apiaframework/apia)
 
 ## Contribution Instructions
 
